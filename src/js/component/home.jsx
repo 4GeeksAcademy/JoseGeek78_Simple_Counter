@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+
 
 const Number = ({ num, sixDigits }) => (
 	<div className={`number ${sixDigits ? 'number-six-digits' : ''}`}>{num}</div>

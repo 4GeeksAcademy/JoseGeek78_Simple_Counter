@@ -21,21 +21,21 @@
   
   .number {
     font-size: 4em;
-    color: #fff;
+    color: #e06868;
     background-color: #000;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin: 5px;
-    border-radius: 10px;
+    border-radius: 15px;
   }
   
   .icon {
     font-size: 3em;
-    color: #fff;
+    color: #7c7474;
     padding-top: 3%;
     margin: 1%;
   }
   
   .number-six-digits {
-   color: aqua;
+   color: rgb(255, 0, 0);
   }
