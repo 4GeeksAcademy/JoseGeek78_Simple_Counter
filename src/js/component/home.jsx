@@ -1,26 +1,37 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+const Number = ({ num, sixDigits }) => (
+	<div className={`number ${sixDigits ? 'number-six-digits' : ''}`}>{num}</div>
+);
 
-//create your first component
-const Home = () => {
+const App = () => {
+	const [seconds, setSeconds] = React.useState(0);
+	React.useEffect(() => {
+		const intervalId = setInterval(
+			() => setSeconds((seconds + 1) % 600000),
+			1000
+		)
+		return () => {
+			clearInterval(intervalId)
+		}
+	})
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container">
+			<h1 className="text-center">Simple Counter</h1>
+			<div className="bg-dark text-center p-5">
+				<span><i class="far fa-clock"></i></span>
+				<Number num={Math.floor(seconds / 60000)} />
+				<Number num={Math.floor(seconds / 10000) % 6} />
+				<Number num={Math.floor(seconds / 1000) % 10} />
+				<Number num={Math.floor(seconds / 100) % 10} sixDigits={true} />
+				<Number num={Math.floor(seconds / 10) % 10} sixDigits={true} />
+				<Number num={seconds % 10} sixDigits={true} />
+			</div>
 		</div>
-	);
+	)
 };
 
-export default Home;
+export default App;
+
+

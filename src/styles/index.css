@@ -10,17 +10,32 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
-.bigCounter {
-    text-align: center;
-    background: black;
-}
-
-.bigCounter div {
-    display: inline-block;
-    font-size: 60px;
-    line-height: 60px;
-    background: #101010;
-    color: white;
-    padding: 10px;
-    margin: 3px;
-}
+* {
+    font-size: 20px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .number {
+    font-size: 4em;
+    color: #fff;
+    background-color: #000;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+    border-radius: 10px;
+  }
+  
+  .icon {
+    font-size: 3em;
+    color: #fff;
+    padding-top: 3%;
+    margin: 1%;
+  }
+  
+  .number-six-digits {
+   color: aqua;
+  }
